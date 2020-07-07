@@ -48,6 +48,7 @@ $ab5 = $json[0]['data'];
 
 if ($ab5 == NULL) {
 	echo "User tidak ada\n";
+	return FALSE;
 } else {
 
 if ($id == 1) {
@@ -96,7 +97,7 @@ echo "$no --> $a\n";
 }
 
 echo "=========================\n";
-echo "Borong Barang Slash\n";
+echo "Auto Follow Tokopedia\n";
 echo "Created by @ikballnh\n";
 echo "=========================\n";
 echo "Masukan username: ";
@@ -114,7 +115,11 @@ echo "Folowers: $abc3\n";
 $data=file_get_contents("dbtkp.txt");
 $ex = explode("\n", str_replace("\r", "", $data));
 $count = count($ex);
+if ($abc2 == FALSE) {
+	echo "Masukan username yang benar";
+} else {
 for($i=0;$i<$count;$i++) {
 regis($abc2, $ex[$i], $i);
+}
 }
 
